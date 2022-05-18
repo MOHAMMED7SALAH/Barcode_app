@@ -1,3 +1,5 @@
+import 'package:barcode_scanner_example/page/barcode_create_page.dart';
+import 'package:barcode_scanner_example/page/scan_barcode.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -38,7 +40,10 @@ class Welcome extends StatelessWidget {
                 height: size.height * .16,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => ScanBarcode()));
+                },
                 child: Container(
                   height: size.width * .2,
                   width: size.width * .8,
@@ -70,12 +75,15 @@ class Welcome extends StatelessWidget {
                 height: size.height * .03,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => BarcodeCreatePage(),
+                  ));
+                },
                 child: Container(
                   height: size.width * .2,
                   width: size.width * .8,
                   decoration: BoxDecoration(
-                    
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(36),
                     boxShadow: [
